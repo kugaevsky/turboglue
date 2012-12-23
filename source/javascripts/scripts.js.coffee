@@ -8,7 +8,7 @@ $(document).ready ->
                                         replace(/[\.\'\:]/g,'').
                                         replace(' & ','_').
                                         replace(/[\s\-]/g,'_')
-    $glueLink = $("<span style='padding-left:10px'>
+    $glueLink = $("<span style='position: absolute;left: 37px;top: 145px;'>
                     <a  class='glue-checkin-widget'
                         href='http://getglue.com/tv_shows/#{$showUrl}'
                         data-type='horizontal'

@@ -1,10 +1,21 @@
+`// ==UserScript==
+// @name Turboglue
+// @description Add GetGlue check-ins to Turbofilm online tv shows.
+// @author nick@kugaevsky.ru
+// @license MIT
+// @version 1.2.0
+// @include http://turbofilm.tv/Watch/*
+// @match http://turbofilm.tv/Watch/*
+// ==/UserScript==`
+
 $(document).ready ->
   if window.location.host == "turbofilm.tv"
     $showTitle = $('.mains').find('a.en').text()
     $showUrl = $showTitle.toLowerCase().replace(' (us)','').
+                                        replace(' m.d.','').
                                         replace('the ','').
                                         replace(' a ','').
-                                        replace(' and','').
+                                        replace(' and','_').
                                         replace(/[\.\'\:]/g,'').
                                         replace(' & ','_').
                                         replace(/[\s\-]/g,'_')
